@@ -1,0 +1,60 @@
+﻿@model IPagedList<PetStore.DATA.EF.Models.Product>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+
+
+<section id="portfolio" class="portfolio sections-bg">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>Shop</h2>
+            <p>Shop all of our exlusive items here!</p>
+        </div>
+
+        <div class="portfolio-isotope aos-init aos-animate" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+
+            <div>
+                <ul class="portfolio-flters">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-app">App</li>
+                    <li data-filter=".filter-product">Product</li>
+                    <li data-filter=".filter-branding">Branding</li>
+                    <li data-filter=".filter-books">Books</li>
+                </ul><!-- End Portfolio Filters -->
+            </div>
+
+            <div class="row gy-4 portfolio-container" style="position: relative; height: 2804.4px;">
+                @foreach (var item in Model)
+                {
+                    <div class="col-xl-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
+                        <div class="portfolio-wrap">
+                            <div class="glightbox">
+                                <img src="~/assets/img/@item.ProductImage" alt="@item.ProductDescription">
+                            </div>
+                            <div class="portfolio-info">
+                                <h4><a href="@Url.Action("Details", "Products")" title="More Details">@item.ProductName</a></h4>
+                                <p>@item.ProductDescription</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End Portfolio Item -->
+                }
+
+            </div>
+            <div class="row mt-5">
+                <div class="w-50 mx-auto text-center">
+                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                    <div class="w-100">
+                        @Html.PagedListPager(
+                        Model,
+                        page => Url.Action("TiledProducts",
+                        new {page, searchTerm = ViewBag.SearchTerm, categoryId = ViewBag.Category}
+                        ))
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</section>

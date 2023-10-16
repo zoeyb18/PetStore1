@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PetStore.DATA.EF.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr id="Category-@item.CategoryId">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Animal)
+                </td>
+               
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                   
+                    <button type="button" , class="DetailsLinkbtn btn-link" , id="@item.CategoryId" , data-toggle="modal" , data-target="#CategoryDetails">
+                        Details
+                    </button>|
+                    @*<a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>*@
+                    <a data-ajax="true"
+                       data-ajax-confirm="Are you sure you want to delete @item.Animal"
+                       data-ajax-failure="deleteFailed"
+                       data-ajax-success="deleteConfirmed"
+                       data-ajax-method="POST"
+                       href="~/Categories/AjaxDelete/@item.CategoryId">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+}
+    </tbody>
+</table>
