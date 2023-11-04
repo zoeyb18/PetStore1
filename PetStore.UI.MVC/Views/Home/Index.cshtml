@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
 }
 <!-- ======= Hero Section ======= -->
@@ -14,7 +15,7 @@
                 </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2">
-                <img src="~/assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+                <img src="~/assets/img/OpenDoodles-Playing.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
             </div>
         </div>
     </div>
@@ -33,24 +34,27 @@
 
                 <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <img src="~/assets/img/icons8-dog-48.png"
-                    class="icon-box" width="25" height="25">
-                    <div class="icon iconsizing"><i class="bi bi-gem"></i></div>
-                        <h4 class="title"><a href="" class="stretched-link">Dogs</a></h4>
-                    
+                         class="icon-box">
+                    <div class="icon"><i class="newicon"></i></div>
+                    <h4 class="title"><a href="@Url.Action("")" class="stretched-link">Dogs</a></h4>
+
+
+
+
+
+
                 </div><!--End Icon Box -->
 
                 <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <img src="~/assets/img/png"
-                    class="icon-box">
-                    <div class="icon iconsizing"><i class="bi bi-geo-alt"></i></div>
-                        <h4 class="title"><a href="" class="stretched-link">Reptiles</a></h4>
+                   
+                        <h2 class="title"><a href="" class="stretched-link">Reptiles</a></h2>
                     
                 </div><!--End Icon Box -->
 
                 <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <img src="~/assets/img/icons8-bird-48.png"
-                    class="icon-box">
-                    <div class="icon iconsizing"><i class="bi bi-command"></i></div>
+                  
+                    
+                    
                         <h4 class="title"><a href="" class="stretched-link">Birds</a></h4>
                    
                 </div><!--End Icon Box -->
@@ -121,7 +125,7 @@
 
         </div>
     </section><!-- End About Us Section -->
-    <!-- ======= Clients Section ======= -->
+   @* <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
         <div class="container" data-aos="zoom-out">
 
@@ -154,17 +158,17 @@
 
                     <div class="stats-item d-flex align-items-center">
                         <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                        <p><strong>Happy Clients</strong> consequuntur quae diredo para mesta</p>
+                        <p><strong>Happy Clients</strong> Guarunteed to satisfy you and your pet.</p>
                     </div><!-- End Stats Item -->
 
                     <div class="stats-item d-flex align-items-center">
                         <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                        <p><strong>Projects</strong> adipisci atque cum quia aut</p>
+                        <p><strong>Pets Helped</strong> Oh yeah, we also rescue dogs and cats.</p>
                     </div><!-- End Stats Item -->
 
                     <div class="stats-item d-flex align-items-center">
                         <span data-purecounter-start="0" data-purecounter-end="453" data-purecounter-duration="1" class="purecounter"></span>
-                        <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
+                        <p><strong>Hours Of Community Service</strong> We are good people</p>
                     </div><!-- End Stats Item -->
 
                 </div>
@@ -172,8 +176,8 @@
             </div>
 
         </div>
-    </section><!-- End Stats Counter Section -->
-    <!-- ======= Call To Action Section ======= -->
+    </section><!-- End Stats Counter Section -->*@
+  @*  <!-- ======= Call To Action Section ======= -->
     <section id="call-to-action" class="call-to-action">
         <div class="container text-center" data-aos="zoom-out">
             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
@@ -389,9 +393,9 @@
                 <div class="swiper-pagination"></div>
             </div>
 
-        </div>
-    </section><!-- End Testimonials Section -->
-    <!-- ======= Portfolio Section ======= -->
+        </div>*@
+   @* </section>*@<!-- End Testimonials Section -->
+  @*  <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio sections-bg">
         <div class="container" data-aos="fade-up">
 
@@ -415,6 +419,29 @@
                 </div>
 
                 <div class="row gy-4 portfolio-container">
+
+                    <div class="col-xl-4 col-md-6 portfolio-item filter-product">
+                        <div class="portfolio-wrap">
+                            <a href="~/assets/img/Screenshot 2023-10-15 202316.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Dog Food</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <a href="~/assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt=""></a>
+                            <div class="portfolio-info">
+                                <h4><a href="portfolio-details.html" title="More Details">Dog Food</a></h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    </div>
 
                     <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
@@ -541,9 +568,9 @@
             </div>
 
         </div>
-    </section><!-- End Portfolio Section -->
+    </section><!-- End Portfolio Section -->*@
     <!-- ======= Our Team Section ======= -->
-    <section id="team" class="team">
+   @* <section id="team" class="team">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -612,9 +639,9 @@
             </div>
 
         </div>
-    </section><!-- End Our Team Section -->
+    </section><!-- End Our Team Section -->*@
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing sections-bg">
+   @* <section id="pricing" class="pricing sections-bg">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -682,7 +709,7 @@
             </div>
 
         </div>
-    </section><!-- End Pricing Section -->
+    </section><!-- End Pricing Section -->*@
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq">
         <div class="container" data-aos="fade-up">
