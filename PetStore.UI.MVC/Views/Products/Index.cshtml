@@ -36,7 +36,9 @@
                         <a asp-action="Discontinued">Discontinued Products</a> |
                     </span>
                 }
-                <a asp-action="TiledProducts">Tile View</a>
+                <button class="btn btn-rounded bg-primary">
+                <a asp-action="TiledProducts" style="color: white; font-weight: bold;">Tile View</a>
+                </button>
             </p>
 
         </div>
@@ -101,8 +103,8 @@
                             @Html.DisplayFor(modelItem => item.IsDiscontinued)
                             </td>*@
                         <td>
-                            @*@Html.DisplayFor(modelItem => item.ProductImage)*@
-                            <img src="~/images/@item.ProductImage" class="img-fluid" alt="@item.ProductDescription" />
+                            @* @Html.DisplayFor(modelItem => item.ProductImage) *@
+                            <img src="~/assets/img/@item.ProductImage" class="img-fluid" alt="@item.ProductDescription" />
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Category.Animal)
