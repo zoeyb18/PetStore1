@@ -26,18 +26,26 @@ namespace PetStore.UI.MVC.Controllers
 
         // GET: Products
         [AllowAnonymous]//give EVERYONE access to this Action - they could be logged in or not, admins or simple users...
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchTerm = null)
         {
-            //var products is the container for our results from the DB
-            //_context is our bridge to the DB -- it represents the database as a whole, with properties for each table from the DB
+            if (searchTerm == null)
+            {
+                //  This is just a regular Index...all products    
+                var Products = _context.Products.Include(p => p.Category).Include(p => p.Supplier);
+                return View(await Products.ToListAsync());
+            }
+            else
+            {
+                //  This is a search
+                var Products = _context
+                    .Products
+                    .Include(p => p.Category)
+                    .Include(p => p.Supplier)
+                    .Where(d => d.ProductName.Contains(searchTerm) ||
+                                d.Category.Animal.Contains(searchTerm));
 
-            //IF we want to manipulate the records we are seeing in the View, we must write LINQ in the controller
-            //to filter/sort our products before they are sent back to the View
-            var products = _context.Products.Where(p => !p.IsDiscontinued)//filter for products that are NOT discontinued
-                                                                          //                                      !IsDiscontinued is the same as IsDiscontinued != true
-
-                .Include(p => p.Category).Include(p => p.Supplier)/*.Include(p => p.OrderProducts)*/;
-            return View(await products.ToListAsync());
+                return View("Index", await Products.ToListAsync());
+            }
         }
 
         // We filtered the Index() to show ONLY active (aka NOT discontinued) products.

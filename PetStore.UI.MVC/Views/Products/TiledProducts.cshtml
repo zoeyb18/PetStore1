@@ -12,18 +12,36 @@
             <p>Shop all of our exclusive items here!</p>
         </div>
 
+        <p align="center">
+            @if (User.IsInRole("Admin"))
+            {
+                <span>
+                    <a asp-action="Create">Add New Product</a> |
+                    <a asp-action="Discontinued">Discontinued Products</a> |
+                </span>
+            }
+            <a asp-action="Index">Table View</a>
+        </p>
+        <form asp-action="TiledProducts" controller="Products" name="searchform" method="post">
+            <div class="d-flex align-content-center">
+                <label for="searchTerm" class="form-label pt-3">Search</label>
+                <input type="text" name="searchTerm" class="form-control w-50 m-2" />
+                <button class="btn btn-outline-primary btn-sm m-2" type="submit">Submit</button>
+            </div>
+        </form>
+
         <div class="portfolio-isotope aos-init aos-animate" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
 
             <div>
                 <ul class="portfolio-flters">
 
                     <li data-filter="*" class="filter-active">All</li>                   
-                    <li data-filter=".filter-">Cat</li>
-                    <li data-filter=".filter-product">Dog</li>
-                    <li data-filter=".filter-branding">Reptile</li>
-                    <li data-filter=".filter-books">Bird</li>
+                    <li data-filter=".filter-">Cats</li>
+                    <li data-filter=".filter-product">Dogs</li>
+                    <li data-filter=".filter-branding">Reptiles</li>
+                    <li data-filter=".filter-books">Birds</li>
                     <li data-filter=".filter-books">Fish</li>
-                    <li data-filter=".filter-books">Rabbit</li>
+                    <li data-filter=".filter-books">Rabbits</li>
                 </ul><!-- End Portfolio Filters -->
             </div>
 
