@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PetStore.DATA.EF.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PetStore.UI.MVC.Controllers
 {
@@ -152,6 +153,20 @@ namespace PetStore.UI.MVC.Controllers
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        [AcceptVerbs("POST")]
+        public JsonResult AjaxDelete(int id)
+        {
+            var category = _context.Categories.Find(id);
+            _context.Categories.Remove(category);
+            _context.SaveChanges();
+
+            return Json(new
+            {
+                id = id,
+                message = $"{category.Animal} was deleted!",
+            });
         }
 
         private bool CategoryExists(int id)

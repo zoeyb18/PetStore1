@@ -41,9 +41,9 @@ namespace PetStore.UI.MVC.Utilities
         /// <summary>
         /// Perform image resize.
         /// </summary>
-        /// <param name="imgWidth">Desired width</param>
-        /// <param name="imgHeight">Desired height</param>
-        /// <param name="image">Image to be resized</param>
+        /// <param name = "imgWidth">Desired width</param>
+        /// <param name = "imgHeight">Desired height</param>
+        /// <param name = "image">Image to be resized</param>
         /// <returns></returns>
         public static Bitmap DoResizeImage(int imgWidth, int imgHeight, Image image)
         {

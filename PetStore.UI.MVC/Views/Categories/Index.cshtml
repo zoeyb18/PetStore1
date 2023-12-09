@@ -9,7 +9,8 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<div id="MessageContent"></div>
+<table class="table" id="CategoriesTable">
     <thead>
         <tr>
             <th>
@@ -45,3 +46,21 @@
 }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        //*********** AJAX DELETE ***********//
+        function deleteConfirmed(response, status, data) {
+            //Remove the Category from the Table.
+            let rowId = "#Category-" + response.id;
+            console.log(rowId);
+            $("#CategoriesTable").find(rowId).remove();
+            //Display status message
+            $("#MessageContent").html("<div class='alert alert-success'>" + response.message + "</div>");
+        }
+        function deleteFailed(response, status, data) {
+            //Display status message
+            $("#MessageContent").html("<div class='alert alert-danger'>Delete unsuccessful</div>");
+        }
+    </script>
+}

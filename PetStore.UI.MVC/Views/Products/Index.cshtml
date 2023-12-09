@@ -20,8 +20,8 @@
 
 <section class="product_section layout_padding">
     <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
+        <div class="heading-container heading-center">
+            <h2 class="justify-content-center">
                 Shop <span>Products</span>
             </h2>
 
@@ -36,7 +36,7 @@
                         <a asp-action="Discontinued">Discontinued Products</a> |
                     </span>
                 }
-                <button class="btn btn-rounded bg-primary">
+                <button class="btn btn-rounded bg-secondary">
                 <a asp-action="TiledProducts" style="color: white; font-weight: bold;">Tile View</a>
                 </button>
             </p>
@@ -80,6 +80,7 @@
                     <th></th>
                 </tr>
             </thead>
+         
             <tbody>
                 @foreach (var item in Model)
                 {
@@ -104,7 +105,7 @@
                             </td>*@
                         <td>
                             @* @Html.DisplayFor(modelItem => item.ProductImage) *@
-                            <img src="~/assets/img/@item.ProductImage" class="img-fluid" alt="@item.ProductDescription" />
+                            <img src="~/assets/img/@item.ProductImage" class="img-fluid" style="width:100px; height:100px;" alt="@item.ProductDescription" />
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Category.Animal)

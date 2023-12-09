@@ -45,36 +45,42 @@
                 </ul><!-- End Portfolio Filters -->
             </div>
 
-            <div class="row gy-4 portfolio-container" style="position: relative; height: 2804.4px;">
+            <div class="row">
+
                 @foreach (var item in Model)
                 {
-                    <div class="col-xl-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
-                        <div class="portfolio-wrap">
-                            <div class="glightbox">
-                                <img src="~/assets/img/@item.ProductImage" alt="@item.ProductDescription">
+                    <div class="col-sm-6 col-md-4 col-lg-4">
+                        <div class="box" >
+                            <div class="option_container">
+                                <div class="options">
+                                    
+                                    <a asp-action="AddToCart"
+                                       asp-controller="ShoppingCart"
+                                       asp-route-id="@item.ProductId"
+                                       class="option2 btn btn-outline-dark">
+                                        Add To Cart
+                                    </a>
+                                </div>
                             </div>
-                            <div class="portfolio-info">
-                               
-                                <a asp-action="AddToCart"
-                                   asp-controller="ShoppingCart"
-                                   asp-route-id="@item.ProductId"
-                                   class="option2">
-                                    Add To Cart
-                                </a>
+                            <div class="img-box">
+                                <img src="~/assets/img/@item.ProductImage" alt="@item.ProductDescription" style="width:200px; height:200px;">
                             </div>
                             <div class="detail-box">
-                                <h5>
+                                <a asp-action="Details"
+                                   asp-route-id="@item.ProductId"
+                                   class="option1 btn">
                                     @item.ProductName
-                                </h5>
-                                <h6>
                                     @Html.DisplayFor(modelItem => item.ProductPrice)
+                                </a>
+                                <h6>
+                                   
                                 </h6>
                             </div>
                         </div>
                     </div>
 
-                    <!-- End Portfolio Item -->
                 }
+
 
             </div>
            

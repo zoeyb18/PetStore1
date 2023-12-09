@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PetStore.UI.MVC.Controllers
 {
+  //  [Authorize(Roles = "Admin")]
     public class AdministrationController : Controller
     {
         #region Props/Ctors

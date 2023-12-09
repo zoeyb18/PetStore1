@@ -70,9 +70,10 @@
             </a>
             <nav id="navbar" class="navbar">
                 <ul>
-                    @if (User.IsInRole("Admin"))
+
+
+                   @* @if (User.IsInRole("Admin")) *@
                     {
-                        //Only displays the HTML inside of these curly braces when a user is logged in with the Admin role
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                                 <span class="nav-label">
@@ -94,8 +95,9 @@
                                 </li>
                             </ul>
                         </li>
-
                     }
+
+                    
 
                     <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                     
@@ -136,7 +138,7 @@
                             <li><a href="#">Rabbits</a></li>
                         </ul>
                     </li>
-                    <li><a href="">Contact</a></li>
+                    
                      <partial name="_LoginPartial" />
 
                     <li>
@@ -178,7 +180,8 @@
                         <li><a href="#">Shop Products</a></li>
                         <li><a href="#">Register</a></li>
                         <li><a href="#">Login</a></li>
-                        <li><a href="#">Cart</a></li>
+                        <li><a href="#">Cart</a></li>                     
+                      
                     </ul>
                 </div>
 
@@ -237,6 +240,14 @@
     <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="~/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="~/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- jQuery -->
+    @* <script src="~/js/jquery-3.4.1.min.js"></script> *@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- AJAX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js" integrity="sha512-DedNBWPF0hLGUPNbCYfj8qjlEnNE92Fqn7xd3Sscfu7ipy7Zu33unHdugqRD3c4Vj7/yLv+slqZhMls/4Oc7Zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
     <!-- Template Main JS File -->
     <script src="~/assets/js/main.js"></script>
